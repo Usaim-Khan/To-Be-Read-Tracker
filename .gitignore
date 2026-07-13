@@ -1,0 +1,52 @@
+# =============================================================================
+# ToBeRead — Django .gitignore
+# =============================================================================
+
+# --- Environment & secrets (NEVER commit these) ---
+.env
+*.env
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# --- Virtual environments ---
+venv/
+env/
+.venv/
+ENV/
+
+# --- Django ---
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# --- Distribution / packaging ---
+dist/
+build/
+*.egg-info/
+*.egg
+.eggs/
+
+# --- Testing ---
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# --- IDEs & editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# --- Static files collected for production ---
+staticfiles/
+static_root/

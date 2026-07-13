@@ -1,0 +1,66 @@
+{% extends 'Books/home.html' %}
+
+{% block TITLE %}
+Login
+{% endblock %}
+
+{% block CSSLINKS %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles/login.css' %}">
+
+
+{% endblock %}
+
+
+
+{% block BODY %}
+
+<div class="container">
+    <div class="card">
+        <h1 class="text-center">LOGIN</h1>
+        <div class="card-body">
+            <p class="text-center tbr-text">Manage your TBR</p>
+            <form action="#" method="post">
+                {% if form.non_field_errors %}
+                    <div class="text-danger alert alert-danger">
+                        {% for error in form.non_field_errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% csrf_token %}
+
+                <div class="form-div">
+                    <label for="id_username">Username</label>
+                    {{form.username}}
+                    {% for error in form.username.errors %}
+                        <p class="text-danger alert alert-danger">{{ error }}</p>
+                    {% endfor %}
+
+
+
+                    <label for="id_username">Password</label>
+                    {{form.password}}
+                    {% for error in form.password.errors %}
+                        <p class="text-danger alert alert-danger">{{ error }}</p>
+                    {% endfor %}
+
+                </div>
+
+                <button type="submit" class="login-button">Login</button>
+            </form>
+
+            <p class="botton-text text-center" id="up">Haven't signed up yet?</p>
+            <a href="{% url 'register' %}" class="botton-text text-center" id="bottom">Sign Up</a>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

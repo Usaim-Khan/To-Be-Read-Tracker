@@ -1,0 +1,70 @@
+{% extends 'Books/home.html' %}
+
+{% block TITLE %}
+Register
+{% endblock %}
+
+{% block CSSLINKS %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles/register.css' %}">
+
+
+{% endblock %}
+
+{% block BODY %}
+
+
+
+
+<div class="container">
+    <div class="card">
+        <h1 class="text-center">REGISTER</h1>
+        <div class="card-body">
+            
+            <p class="text-center tbr-text">Manage your TBR</p>
+            
+            <form action="#" method="post">
+                <div class="form-div">
+
+                {% csrf_token %}
+                <label for="id_username">Username</label>
+                {{ form.username }}
+                {% if form.username.errors %}
+                    <p class="text-danger alert alert-danger">{{ form.username.errors|striptags }}</p>
+                {% endif %}
+
+                <label for="id_email">Email</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                    <p class="text-danger alert alert-danger">{{ form.email.errors|striptags }}</p>
+                {% endif %}
+
+                <label for="id_password1">Password</label>
+                {{ form.password1 }}
+                {% if form.password1.errors %}
+                    <p class="text-danger alert alert-danger">{{ form.password1.errors|striptags }}</p>
+                {% endif %}
+
+                <label for="id_password2">Confirm Password</label>
+                {{ form.password2 }}
+                {% if form.password2.errors %}
+                    <p class="text-danger alert alert-danger">{{ form.password2.errors|striptags }}</p>
+                {% endif %}
+
+            </div>
+                <button type="submit" class="register-button">Register</button>
+                
+            </form>
+
+
+            <p class="botton-text text-center" id="up">Already signed up?</p>
+            <a href="{% url 'login' %}" class="botton-text text-center" id="bottom">Sign In</a>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

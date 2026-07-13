@@ -1,0 +1,47 @@
+{% extends 'Books/home.html' %}
+
+{% block TITLE %}
+Books
+{% endblock %}
+
+{% block CSSLINKS %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles/books.css' %}">
+
+{% endblock %}
+
+{% block BODY %}
+<div class="container-fluid">
+    <div class="container">
+        <a href="{% url 'create-book' %}" class="crt-link mt-4 text-center"> &#43 Add a Book</a>
+    </div>
+    <hr>
+
+    <div class="container-fluid my-container">
+        {% if books %}
+        {% for book in books %}
+        <div class="card mb-3 mx-2">
+            <p class="title card-text">{{book.title}}</p>
+            <p class="author card-text">{{book.author}}</p>
+            <p class="genre card-text">{{book.genre}}</p>
+            <div class="links">
+                <a href="{% url 'edit-book' book.id %}" class="btn btn-outline-info">Edit</a>
+                <a href="{% url 'delete-book' book.id %}" class="btn btn-outline-danger">Delete</a>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% else %}
+        <p class="no-books-text text-center">No books in your collection. Start adding now</p>
+
+        {% endif %}
+
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}
