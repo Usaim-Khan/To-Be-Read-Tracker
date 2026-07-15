@@ -5,7 +5,7 @@
 A Django web app for tracking books you want to read. Create an account, add books with title/author/genre, and manage your list from a simple card-based interface.
 
 <!-- Screenshot: login/register page -->
-![Login](docs/screenshots/login.png)
+![Login](docs/screenshots/register.png)
 
 <!-- Screenshot: books list page -->
 ![Books list](docs/screenshots/books.png)
@@ -15,7 +15,7 @@ A Django web app for tracking books you want to read. Create an account, add boo
 - **User accounts** — register, log in, log out; each user only sees their own books
 - **Add, edit, delete books** — track title, author, and genre
 - **Card-based book list** — clean view of your full reading list
-- **Responsive UI** — built with Bootstrap, works on mobile and desktop
+
 
 ## Tech Stack
 
